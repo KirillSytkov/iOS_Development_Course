@@ -9,6 +9,8 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
+    let appTitle = UILabel()
+    let appSubtitle = UILabel()
     let loginView = LoginView()
     let signInButton = UIButton(type: .system)
     let errorMessageLabel = UILabel()
@@ -30,6 +32,17 @@ class LoginViewController: UIViewController {
 extension LoginViewController {
     
     private func style() {
+        appTitle.translatesAutoresizingMaskIntoConstraints = false
+        appTitle.text = "Bankey"
+        appTitle.font = UIFont.systemFont(ofSize: 40)
+        appTitle.textAlignment = .center
+        
+        appSubtitle.translatesAutoresizingMaskIntoConstraints = false
+        appSubtitle.text = "Your premium source for all things banking!"
+        appSubtitle.numberOfLines = 0
+        appSubtitle.font = UIFont.systemFont(ofSize: 24)
+        appSubtitle.textAlignment = .center
+        
         loginView.translatesAutoresizingMaskIntoConstraints = false
         
         signInButton.translatesAutoresizingMaskIntoConstraints = false
@@ -47,9 +60,19 @@ extension LoginViewController {
     }
     
     private func layout() {
+        view.addSubview(appTitle)
+        view.addSubview(appSubtitle)
         view.addSubview(loginView)
         view.addSubview(signInButton)
         view.addSubview(errorMessageLabel)
+        //appTitle
+        NSLayoutConstraint.activate([
+            appSubtitle.bottomAnchor.constraint(equalTo: loginView.topAnchor, constant: -30),
+            appSubtitle.leadingAnchor.constraint(equalTo: loginView.leadingAnchor, constant: -10),
+            appSubtitle.trailingAnchor.constraint(equalTo: loginView.trailingAnchor, constant: -10),
+            appTitle.bottomAnchor.constraint(equalTo: appSubtitle.topAnchor, constant: -20),
+            appTitle.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        ])
         
         //LoginView
         NSLayoutConstraint.activate([
@@ -94,7 +117,7 @@ extension LoginViewController {
         }
         
         if username == "Kirill" && password == "Welcome" {
-            signInButton.configuration?.showsActivityIndicator = true  
+            signInButton.configuration?.showsActivityIndicator = true
         } else {
             configureView(withMessage: "Incorrect username / password")
         }
