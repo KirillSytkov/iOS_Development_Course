@@ -32,16 +32,20 @@ class LoginViewController: UIViewController {
 extension LoginViewController {
     
     private func style() {
+        view.backgroundColor = .systemBackground
+        
         appTitle.translatesAutoresizingMaskIntoConstraints = false
         appTitle.text = "Bankey"
         appTitle.font = UIFont.systemFont(ofSize: 40)
         appTitle.textAlignment = .center
+        appTitle.adjustsFontSizeToFitWidth = true
         
         appSubtitle.translatesAutoresizingMaskIntoConstraints = false
         appSubtitle.text = "Your premium source for all things banking!"
         appSubtitle.numberOfLines = 0
         appSubtitle.font = UIFont.systemFont(ofSize: 24)
         appSubtitle.textAlignment = .center
+        appSubtitle.adjustsFontSizeToFitWidth = true
         
         loginView.translatesAutoresizingMaskIntoConstraints = false
         
