@@ -16,11 +16,22 @@ class OnboardingContainerViewController: UIViewController {
 
     let pageViewController: UIPageViewController
     var pages = [UIViewController]()
-    var currentVC: UIViewController
+    var currentVC: UIViewController {
+        didSet {
+            guard let index = pages.firstIndex(of: currentVC) else { return }
+            nextButton.isHidden = index == pages.count - 1 // hide if on last page
+            backButton.isHidden = index == 0
+            doneButton.isHidden = !(index == pages.count - 1) // show if on last page
+        }
+    }
+    
+    let nextButton = UIButton(type: .system)
+    let backButton = UIButton(type: .system)
     let closeButton = UIButton(type: .system)
     let doneButton = UIButton(type: .system)
     
     weak var delegate: OnboardingContainerViewControllerDelegate?
+    weak var logoutDelegate: LogoutDelegate?
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         
@@ -55,7 +66,7 @@ class OnboardingContainerViewController: UIViewController {
     private func setup() {
         view.backgroundColor = .systemPurple
         
-        self.addChild(pageViewController)
+        addChild(pageViewController)
         view.addSubview(pageViewController.view)
         pageViewController.didMove(toParent: self)
         
@@ -74,17 +85,52 @@ class OnboardingContainerViewController: UIViewController {
     }
     
     private func style() {
+        nextButton.translatesAutoresizingMaskIntoConstraints = false
+        nextButton.setTitle("Next", for: .normal)
+        nextButton.addTarget(self, action: #selector(nextTapped), for: .primaryActionTriggered)
+        
+        backButton.translatesAutoresizingMaskIntoConstraints = false
+        backButton.setTitle("Back", for: .normal)
+        backButton.addTarget(self, action: #selector(backTapped), for: .primaryActionTriggered)
+        
         closeButton.translatesAutoresizingMaskIntoConstraints = false
         closeButton.setTitle("Close", for: .normal)
         closeButton.addTarget(self, action: #selector(closeTapped), for: .primaryActionTriggered)
         
-        view.addSubview(closeButton)
+        doneButton.translatesAutoresizingMaskIntoConstraints = false
+        doneButton.setTitle("Done", for: .normal)
+        doneButton.addTarget(self, action: #selector(doneTapped), for: .primaryActionTriggered)
+        
     }
     
     private func layout() {
+        view.addSubview(nextButton)
+        view.addSubview(backButton)
+        view.addSubview(closeButton)
+        view.addSubview(doneButton)
+        
+        // Buttons
+        
+        // Next
+        NSLayoutConstraint.activate([
+            view.trailingAnchor.constraint(equalToSystemSpacingAfter: nextButton.trailingAnchor, multiplier: 4),
+            view.safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: nextButton.bottomAnchor, constant: 50)
+            
+        ])
+        //Back
+        NSLayoutConstraint.activate([
+            backButton.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 4),
+            view.safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: backButton.bottomAnchor, constant: 50)
+        ])
+        //Close
         NSLayoutConstraint.activate([
             closeButton.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 2),
             closeButton.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 2)
+        ])
+        //Done
+        NSLayoutConstraint.activate([
+            view.trailingAnchor.constraint(equalToSystemSpacingAfter: doneButton.trailingAnchor, multiplier: 4),
+            view.safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: doneButton.bottomAnchor, constant: 50)
         ])
     }
     
@@ -113,7 +159,8 @@ extension OnboardingContainerViewController: UIPageViewControllerDataSource {
         currentVC = pages[index + 1]
         return pages[index + 1]
     }
-
+    
+    //Page Controll
     func presentationCount(for pageViewController: UIPageViewController) -> Int {
         return pages.count
     }
@@ -121,12 +168,27 @@ extension OnboardingContainerViewController: UIPageViewControllerDataSource {
     func presentationIndex(for pageViewController: UIPageViewController) -> Int {
         return pages.firstIndex(of: self.currentVC) ?? 0
     }
+    
 }
 
 //MARK: - Actions
 
 extension OnboardingContainerViewController {
-    @IBAction func closeTapped(_ sender: UIButton) {
+    @IBAction func nextTapped(sender: UIButton) {
+        guard let nextVC = getNextViewController(from: currentVC) else { return }
+        pageViewController.setViewControllers([nextVC], direction: .forward, animated: true, completion: nil)
+    }
+    
+    @IBAction func backTapped(sender: UIButton) {
+        guard let previusVC  = getPreviousViewController(from: currentVC) else  { return }
+        pageViewController.setViewControllers([previusVC], direction: .reverse, animated: true, completion: nil)
+    }
+    
+    @IBAction func closeTapped(sender: UIButton) {
+        logoutDelegate?.didLogout()
+    }
+    
+    @IBAction func doneTapped(sender: UIButton) {
         delegate?.didFinishOnboarding()
     }
 }
