@@ -16,6 +16,9 @@
 		494C6F362817FA260023FF5F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494C6F352817FA260023FF5F /* LoginView.swift */; };
 		4996AB4C28194938007DA12F /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4996AB4B28194938007DA12F /* OnboardingContainerViewController.swift */; };
 		4996AB4E2819A304007DA12F /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4996AB4D2819A304007DA12F /* OnboardingViewController.swift */; };
+		49C4D802281D8FDB00B9DEFC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C4D801281D8FDB00B9DEFC /* Constants.swift */; };
+		49C4D805281D905000B9DEFC /* UIViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C4D804281D905000B9DEFC /* UIViewController+extension.swift */; };
+		49EC45AB281EF3FC007C713B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EC45AA281EF3FC007C713B /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		494C6F352817FA260023FF5F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		4996AB4B28194938007DA12F /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
 		4996AB4D2819A304007DA12F /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		49C4D801281D8FDB00B9DEFC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		49C4D804281D905000B9DEFC /* UIViewController+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extension.swift"; sourceTree = "<group>"; };
+		49EC45AA281EF3FC007C713B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +52,7 @@
 		49088F3E281C7F24000ADD50 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				49C4D803281D903E00B9DEFC /* Extensions */,
 				49088F3F281C7F38000ADD50 /* LocalState.swift */,
 			);
 			path = Utils;
@@ -70,11 +77,13 @@
 		494C6F1D2817F7990023FF5F /* Bankey */ = {
 			isa = PBXGroup;
 			children = (
-				49088F3E281C7F24000ADD50 /* Utils */,
-				4996AB4A2819490C007DA12F /* OnBoarding */,
-				494C6F342817F9F80023FF5F /* Login */,
-				494C6F372817FA6A0023FF5F /* Files */,
+				49EC45AA281EF3FC007C713B /* MainViewController.swift */,
 				494C6F1E2817F7990023FF5F /* AppDelegate.swift */,
+				49C4D801281D8FDB00B9DEFC /* Constants.swift */,
+				494C6F342817F9F80023FF5F /* Login */,
+				4996AB4A2819490C007DA12F /* OnBoarding */,
+				49088F3E281C7F24000ADD50 /* Utils */,
+				494C6F372817FA6A0023FF5F /* Files */,
 			);
 			path = Bankey;
 			sourceTree = "<group>";
@@ -106,6 +115,14 @@
 				4996AB4D2819A304007DA12F /* OnboardingViewController.swift */,
 			);
 			path = OnBoarding;
+			sourceTree = "<group>";
+		};
+		49C4D803281D903E00B9DEFC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				49C4D804281D905000B9DEFC /* UIViewController+extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,11 +197,14 @@
 			files = (
 				494C6F362817FA260023FF5F /* LoginView.swift in Sources */,
 				49088F40281C7F38000ADD50 /* LocalState.swift in Sources */,
+				49C4D805281D905000B9DEFC /* UIViewController+extension.swift in Sources */,
 				49088F3D281C79D3000ADD50 /* DummyViewController.swift in Sources */,
 				494C6F232817F7990023FF5F /* LoginViewController.swift in Sources */,
 				4996AB4E2819A304007DA12F /* OnboardingViewController.swift in Sources */,
 				494C6F1F2817F7990023FF5F /* AppDelegate.swift in Sources */,
 				4996AB4C28194938007DA12F /* OnboardingContainerViewController.swift in Sources */,
+				49C4D802281D8FDB00B9DEFC /* Constants.swift in Sources */,
+				49EC45AB281EF3FC007C713B /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

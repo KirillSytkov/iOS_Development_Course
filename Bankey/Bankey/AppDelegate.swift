@@ -7,16 +7,19 @@
 
 import UIKit
 
+
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    
     let loginViewController = LoginViewController()
     let onBoardingContainerVC = OnboardingContainerViewController()
     let dummyVC = DummyViewController()
-
+    let mainViewController = MainViewController()
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         window?.backgroundColor = .systemBackground
@@ -25,8 +28,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         onBoardingContainerVC.delegate = self
         onBoardingContainerVC.logoutDelegate = self
         dummyVC.logoutDelegate = self
-        window?.rootViewController = loginViewController
+        
+        
+        window?.rootViewController = mainViewController
 //        window?.rootViewController = onBoardingContainerVC
+        
+        mainViewController.selectedIndex = 1
         return true
     }
 }
