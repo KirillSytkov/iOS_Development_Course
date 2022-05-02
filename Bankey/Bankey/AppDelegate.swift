@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         window?.rootViewController = mainViewController
-//        window?.rootViewController = onBoardingContainerVC
+        window?.rootViewController = AccountSummaryViewController()
         
         mainViewController.selectedIndex = 1
         return true
