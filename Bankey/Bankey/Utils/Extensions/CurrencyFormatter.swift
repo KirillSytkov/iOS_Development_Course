@@ -48,8 +48,9 @@ struct CurrencyFormatter {
         return cents
     }
     
-    private func dollarsFormatted(_ dollars: Double) -> String {
+     private func dollarsFormatted(_ dollars: Double) -> String {
         let formatter = NumberFormatter()
+        
         formatter.numberStyle = .currency
         formatter.usesGroupingSeparator = true
         
