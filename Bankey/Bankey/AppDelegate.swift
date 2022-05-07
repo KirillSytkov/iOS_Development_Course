@@ -27,11 +27,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         onBoardingContainerVC.delegate = self
         onBoardingContainerVC.logoutDelegate = self
         
+        registerForNotifications()
         
         displayLogin()
         return true
     }
-    
+    private func registerForNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(didLogout), name: .Logout, object: nil)
+    }
     private func displayLogin() {
         setRootViewController(loginViewController)
     }
@@ -66,7 +69,7 @@ extension AppDelegate: OnboardingContainerViewControllerDelegate {
 }
 
 extension AppDelegate: LogoutDelegate {
-    func didLogout() {
+    @IBAction func didLogout() {
         setRootViewController(loginViewController)
     }
 }

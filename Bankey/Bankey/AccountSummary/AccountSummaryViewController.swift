@@ -12,17 +12,28 @@ class AccountSummaryViewController: UIViewController {
     var accounts: [AccountSummaryCell.ViewModel] = []
     var tableView = UITableView()
     
+    lazy var logoutBarButtonItem: UIBarButtonItem = {
+        let barButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(logoutTapped))
+        barButtonItem.tintColor = .label
+        return barButtonItem
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupNavigationBar()
         setupTableView()
         setupTableHeaderView()
         fetchData()
     }
+    
 }
 
-//MARK: - Extensions
+//MARK: - SetupUI
 extension AccountSummaryViewController {
-
+    private func setupNavigationBar() {
+        navigationItem.rightBarButtonItem = logoutBarButtonItem
+    }
+    
     private func setupTableView() {
         tableView.backgroundColor = Constants.Colors.appColor
         tableView.delegate = self
@@ -52,7 +63,7 @@ extension AccountSummaryViewController {
         tableView.tableHeaderView = header
     }
 }
-
+//MARK: - Table View
 extension AccountSummaryViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         accounts.count
@@ -72,11 +83,11 @@ extension AccountSummaryViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
-
+//MARK: - Data fetching
 extension AccountSummaryViewController { // faking out the network call and got the data
     private func fetchData() {
         let savings = AccountSummaryCell.ViewModel(accountType: .Banking, accountName: "Basic Savings", balance: 929466.23)
-        let chequing = AccountSummaryCell.ViewModel(accountType: .Investment, accountName: "No-fee All-in Chequing", balance: 17562.44)
+        let chequing = AccountSummaryCell.ViewModel(accountType: .Investment, accountName: "No-fee All-in Chequinga", balance: 17562.44)
         let visa = AccountSummaryCell.ViewModel(accountType: .CreditiCard, accountName: "Visa Avion Card", balance: 412.83)
         let masterCard = AccountSummaryCell.ViewModel(accountType: .CreditiCard, accountName: "Student Mastercard", balance: 50.83)
         let investment = AccountSummaryCell.ViewModel(accountType: .Investment, accountName: "Tax-Free Saver", balance: 20000.00)
@@ -89,5 +100,12 @@ extension AccountSummaryViewController { // faking out the network call and got 
         accounts.append(investment)
         accounts.append(investment2)
         
+    }
+}
+
+//MARK: - Actions
+extension AccountSummaryViewController {
+    @IBAction func logoutTapped(sender:UIButton) {
+        NotificationCenter.default.post(name: .Logout, object: nil)
     }
 }
