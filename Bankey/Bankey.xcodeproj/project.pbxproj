@@ -13,6 +13,7 @@
 		494C6F282817F79A0023FF5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 494C6F272817F79A0023FF5F /* Assets.xcassets */; };
 		494C6F2B2817F79A0023FF5F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 494C6F292817F79A0023FF5F /* LaunchScreen.storyboard */; };
 		494C6F362817FA260023FF5F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494C6F352817FA260023FF5F /* LoginView.swift */; };
+		498FD6DE2828229500DAFA1E /* ShakeyBellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498FD6DD2828229500DAFA1E /* ShakeyBellView.swift */; };
 		4996AB4C28194938007DA12F /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4996AB4B28194938007DA12F /* OnboardingContainerViewController.swift */; };
 		4996AB4E2819A304007DA12F /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4996AB4D2819A304007DA12F /* OnboardingViewController.swift */; };
 		49C4D802281D8FDB00B9DEFC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C4D801281D8FDB00B9DEFC /* Constants.swift */; };
@@ -48,6 +49,7 @@
 		494C6F2A2817F79A0023FF5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		494C6F2C2817F79A0023FF5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		494C6F352817FA260023FF5F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		498FD6DD2828229500DAFA1E /* ShakeyBellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeyBellView.swift; sourceTree = "<group>"; };
 		4996AB4B28194938007DA12F /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
 		4996AB4D2819A304007DA12F /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		49C4D801281D8FDB00B9DEFC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				4996AB4A2819490C007DA12F /* OnBoarding */,
 				49EC45AC282049E8007C713B /* AccountSummary */,
 				49088F3E281C7F24000ADD50 /* Utils */,
+				498FD6DC2828227B00DAFA1E /* Components */,
 				494C6F372817FA6A0023FF5F /* Files */,
 			);
 			path = Bankey;
@@ -143,6 +146,14 @@
 				494C6F2C2817F79A0023FF5F /* Info.plist */,
 			);
 			name = Files;
+			sourceTree = "<group>";
+		};
+		498FD6DC2828227B00DAFA1E /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				498FD6DD2828229500DAFA1E /* ShakeyBellView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		4996AB4A2819490C007DA12F /* OnBoarding */ = {
@@ -312,6 +323,7 @@
 				49FE154A2821710200B70190 /* Decimal+extension.swift in Sources */,
 				49C4D805281D905000B9DEFC /* UIViewController+extension.swift in Sources */,
 				494C6F232817F7990023FF5F /* LoginViewController.swift in Sources */,
+				498FD6DE2828229500DAFA1E /* ShakeyBellView.swift in Sources */,
 				4996AB4E2819A304007DA12F /* OnboardingViewController.swift in Sources */,
 				49EDB9892826D54A00724952 /* UITextField+extension.swift in Sources */,
 				494C6F1F2817F7990023FF5F /* AppDelegate.swift in Sources */,

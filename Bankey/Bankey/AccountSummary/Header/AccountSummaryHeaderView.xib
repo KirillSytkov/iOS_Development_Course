@@ -22,28 +22,28 @@
                     <rect key="frame" x="16" y="16" width="394" height="112"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="F2k-Lt-Nuh">
-                            <rect key="frame" x="0.0" y="0.0" width="281" height="103.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="294" height="103.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bankey" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UfS-w7-fjM">
-                                    <rect key="frame" x="0.0" y="0.0" width="281" height="30"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="294" height="30"/>
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Good morning" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R72-4U-TaR">
-                                    <rect key="frame" x="0.0" y="34" width="281" height="20.5"/>
+                                    <rect key="frame" x="0.0" y="34" width="294" height="20.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kirill" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n2a-xI-fkh">
-                                    <rect key="frame" x="0.0" y="58.5" width="281" height="20.5"/>
+                                    <rect key="frame" x="0.0" y="58.5" width="294" height="20.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ytN-fV-Bwb">
-                                    <rect key="frame" x="0.0" y="83" width="281" height="20.5"/>
+                                    <rect key="frame" x="0.0" y="83" width="294" height="20.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -51,10 +51,11 @@
                             </subviews>
                         </stackView>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun.max.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="tTm-4P-B86">
-                            <rect key="frame" x="281" y="-0.5" width="113" height="112.5"/>
+                            <rect key="frame" x="294" y="-0.5" width="100" height="100.5"/>
                             <color key="tintColor" systemColor="systemYellowColor"/>
                             <constraints>
-                                <constraint firstAttribute="width" secondItem="tTm-4P-B86" secondAttribute="height" constant="1" id="U6G-Cd-M7g"/>
+                                <constraint firstAttribute="height" constant="100" id="Zeg-kp-KHF"/>
+                                <constraint firstAttribute="width" secondItem="tTm-4P-B86" secondAttribute="height" id="igk-5i-Lt2"/>
                             </constraints>
                         </imageView>
                     </subviews>
