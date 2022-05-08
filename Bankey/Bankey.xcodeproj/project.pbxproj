@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		49088F3D281C79D3000ADD50 /* DummyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49088F3C281C79D3000ADD50 /* DummyViewController.swift */; };
 		49088F40281C7F38000ADD50 /* LocalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49088F3F281C7F38000ADD50 /* LocalState.swift */; };
 		494C6F1F2817F7990023FF5F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494C6F1E2817F7990023FF5F /* AppDelegate.swift */; };
 		494C6F232817F7990023FF5F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494C6F222817F7990023FF5F /* LoginViewController.swift */; };
@@ -41,7 +40,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		49088F3C281C79D3000ADD50 /* DummyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyViewController.swift; sourceTree = "<group>"; };
 		49088F3F281C7F38000ADD50 /* LocalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalState.swift; sourceTree = "<group>"; };
 		494C6F1B2817F7990023FF5F /* Bankey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bankey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		494C6F1E2817F7990023FF5F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -132,7 +130,6 @@
 			isa = PBXGroup;
 			children = (
 				494C6F222817F7990023FF5F /* LoginViewController.swift */,
-				49088F3C281C79D3000ADD50 /* DummyViewController.swift */,
 				494C6F352817FA260023FF5F /* LoginView.swift */,
 			);
 			path = Login;
@@ -314,7 +311,6 @@
 				49EC45AE28204A13007C713B /* AccountSummaryViewController.swift in Sources */,
 				49FE154A2821710200B70190 /* Decimal+extension.swift in Sources */,
 				49C4D805281D905000B9DEFC /* UIViewController+extension.swift in Sources */,
-				49088F3D281C79D3000ADD50 /* DummyViewController.swift in Sources */,
 				494C6F232817F7990023FF5F /* LoginViewController.swift in Sources */,
 				4996AB4E2819A304007DA12F /* OnboardingViewController.swift in Sources */,
 				49EDB9892826D54A00724952 /* UITextField+extension.swift in Sources */,
