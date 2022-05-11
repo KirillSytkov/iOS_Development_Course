@@ -15,6 +15,8 @@
 		494C6F362817FA260023FF5F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494C6F352817FA260023FF5F /* LoginView.swift */; };
 		49849054282C1AC200F06857 /* ProfileTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49849053282C1AC200F06857 /* ProfileTest.swift */; };
 		49849056282C1C7400F06857 /* AcccountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49849055282C1C7400F06857 /* AcccountTests.swift */; };
+		49849058282C340500F06857 /* SkeletonLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49849057282C340500F06857 /* SkeletonLoadable.swift */; };
+		4984905A282C34BA00F06857 /* SkeletonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49849059282C34BA00F06857 /* SkeletonCell.swift */; };
 		498FD6DE2828229500DAFA1E /* ShakeyBellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498FD6DD2828229500DAFA1E /* ShakeyBellView.swift */; };
 		4996AB4C28194938007DA12F /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4996AB4B28194938007DA12F /* OnboardingContainerViewController.swift */; };
 		4996AB4E2819A304007DA12F /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4996AB4D2819A304007DA12F /* OnboardingViewController.swift */; };
@@ -55,6 +57,8 @@
 		494C6F352817FA260023FF5F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		49849053282C1AC200F06857 /* ProfileTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTest.swift; sourceTree = "<group>"; };
 		49849055282C1C7400F06857 /* AcccountTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcccountTests.swift; sourceTree = "<group>"; };
+		49849057282C340500F06857 /* SkeletonLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonLoadable.swift; sourceTree = "<group>"; };
+		49849059282C34BA00F06857 /* SkeletonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonCell.swift; sourceTree = "<group>"; };
 		498FD6DD2828229500DAFA1E /* ShakeyBellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeyBellView.swift; sourceTree = "<group>"; };
 		4996AB4B28194938007DA12F /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
 		4996AB4D2819A304007DA12F /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
@@ -226,6 +230,8 @@
 			isa = PBXGroup;
 			children = (
 				49FE1545282154DA00B70190 /* AccountSummaryCell.swift */,
+				49849057282C340500F06857 /* SkeletonLoadable.swift */,
+				49849059282C34BA00F06857 /* SkeletonCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -342,6 +348,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49EC45B028204F66007C713B /* AccountSummaryHeaderView.swift in Sources */,
+				4984905A282C34BA00F06857 /* SkeletonCell.swift in Sources */,
 				49E04CDA282ABA8200B28AAC /* Date+extension.swift in Sources */,
 				49FE1546282154DA00B70190 /* AccountSummaryCell.swift in Sources */,
 				494C6F362817FA260023FF5F /* LoginView.swift in Sources */,
@@ -359,6 +366,7 @@
 				4996AB4C28194938007DA12F /* OnboardingContainerViewController.swift in Sources */,
 				49C4D802281D8FDB00B9DEFC /* Constants.swift in Sources */,
 				49EC45AB281EF3FC007C713B /* MainViewController.swift in Sources */,
+				49849058282C340500F06857 /* SkeletonLoadable.swift in Sources */,
 				49E04CDC282ABEEF00B28AAC /* AccountSummaryViewController+Networking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
