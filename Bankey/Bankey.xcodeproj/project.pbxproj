@@ -13,6 +13,8 @@
 		494C6F282817F79A0023FF5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 494C6F272817F79A0023FF5F /* Assets.xcassets */; };
 		494C6F2B2817F79A0023FF5F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 494C6F292817F79A0023FF5F /* LaunchScreen.storyboard */; };
 		494C6F362817FA260023FF5F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494C6F352817FA260023FF5F /* LoginView.swift */; };
+		49849054282C1AC200F06857 /* ProfileTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49849053282C1AC200F06857 /* ProfileTest.swift */; };
+		49849056282C1C7400F06857 /* AcccountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49849055282C1C7400F06857 /* AcccountTests.swift */; };
 		498FD6DE2828229500DAFA1E /* ShakeyBellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498FD6DD2828229500DAFA1E /* ShakeyBellView.swift */; };
 		4996AB4C28194938007DA12F /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4996AB4B28194938007DA12F /* OnboardingContainerViewController.swift */; };
 		4996AB4E2819A304007DA12F /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4996AB4D2819A304007DA12F /* OnboardingViewController.swift */; };
@@ -51,6 +53,8 @@
 		494C6F2A2817F79A0023FF5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		494C6F2C2817F79A0023FF5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		494C6F352817FA260023FF5F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		49849053282C1AC200F06857 /* ProfileTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTest.swift; sourceTree = "<group>"; };
+		49849055282C1C7400F06857 /* AcccountTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcccountTests.swift; sourceTree = "<group>"; };
 		498FD6DD2828229500DAFA1E /* ShakeyBellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeyBellView.swift; sourceTree = "<group>"; };
 		4996AB4B28194938007DA12F /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
 		4996AB4D2819A304007DA12F /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
@@ -152,6 +156,23 @@
 			name = Files;
 			sourceTree = "<group>";
 		};
+		49849051282C1A9B00F06857 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				49FE155A2822FA7D00B70190 /* CurrencyFormatterTest.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		49849052282C1AA800F06857 /* AccountSummary */ = {
+			isa = PBXGroup;
+			children = (
+				49849053282C1AC200F06857 /* ProfileTest.swift */,
+				49849055282C1C7400F06857 /* AcccountTests.swift */,
+			);
+			path = AccountSummary;
+			sourceTree = "<group>";
+		};
 		498FD6DC2828227B00DAFA1E /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -212,7 +233,8 @@
 		49FE15522822F9BE00B70190 /* BankeyUnitTests */ = {
 			isa = PBXGroup;
 			children = (
-				49FE155A2822FA7D00B70190 /* CurrencyFormatterTest.swift */,
+				49849052282C1AA800F06857 /* AccountSummary */,
+				49849051282C1A9B00F06857 /* Utils */,
 			);
 			path = BankeyUnitTests;
 			sourceTree = "<group>";
@@ -346,6 +368,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				49FE155B2822FA7D00B70190 /* CurrencyFormatterTest.swift in Sources */,
+				49849054282C1AC200F06857 /* ProfileTest.swift in Sources */,
+				49849056282C1C7400F06857 /* AcccountTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
