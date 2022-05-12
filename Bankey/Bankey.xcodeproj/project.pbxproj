@@ -13,6 +13,8 @@
 		494C6F282817F79A0023FF5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 494C6F272817F79A0023FF5F /* Assets.xcassets */; };
 		494C6F2B2817F79A0023FF5F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 494C6F292817F79A0023FF5F /* LaunchScreen.storyboard */; };
 		494C6F362817FA260023FF5F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494C6F352817FA260023FF5F /* LoginView.swift */; };
+		497FC5A4282D7FE200375922 /* ProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497FC5A3282D7FE200375922 /* ProfileManager.swift */; };
+		497FC5A6282D82B500375922 /* AccountSummaryViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497FC5A5282D82B500375922 /* AccountSummaryViewControllerTests.swift */; };
 		49849054282C1AC200F06857 /* ProfileTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49849053282C1AC200F06857 /* ProfileTest.swift */; };
 		49849056282C1C7400F06857 /* AcccountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49849055282C1C7400F06857 /* AcccountTests.swift */; };
 		49849058282C340500F06857 /* SkeletonLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49849057282C340500F06857 /* SkeletonLoadable.swift */; };
@@ -55,6 +57,8 @@
 		494C6F2A2817F79A0023FF5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		494C6F2C2817F79A0023FF5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		494C6F352817FA260023FF5F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		497FC5A3282D7FE200375922 /* ProfileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileManager.swift; sourceTree = "<group>"; };
+		497FC5A5282D82B500375922 /* AccountSummaryViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryViewControllerTests.swift; sourceTree = "<group>"; };
 		49849053282C1AC200F06857 /* ProfileTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTest.swift; sourceTree = "<group>"; };
 		49849055282C1C7400F06857 /* AcccountTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcccountTests.swift; sourceTree = "<group>"; };
 		49849057282C340500F06857 /* SkeletonLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonLoadable.swift; sourceTree = "<group>"; };
@@ -160,6 +164,14 @@
 			name = Files;
 			sourceTree = "<group>";
 		};
+		497FC5A2282D7FCC00375922 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				497FC5A3282D7FE200375922 /* ProfileManager.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		49849051282C1A9B00F06857 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +185,7 @@
 			children = (
 				49849053282C1AC200F06857 /* ProfileTest.swift */,
 				49849055282C1C7400F06857 /* AcccountTests.swift */,
+				497FC5A5282D82B500375922 /* AccountSummaryViewControllerTests.swift */,
 			);
 			path = AccountSummary;
 			sourceTree = "<group>";
@@ -213,6 +226,7 @@
 				49E04CDB282ABEEF00B28AAC /* AccountSummaryViewController+Networking.swift */,
 				49FE15432821549800B70190 /* Header */,
 				49FE1544282154B200B70190 /* Cells */,
+				497FC5A2282D7FCC00375922 /* Networking */,
 			);
 			path = AccountSummary;
 			sourceTree = "<group>";
@@ -350,6 +364,7 @@
 				49EC45B028204F66007C713B /* AccountSummaryHeaderView.swift in Sources */,
 				4984905A282C34BA00F06857 /* SkeletonCell.swift in Sources */,
 				49E04CDA282ABA8200B28AAC /* Date+extension.swift in Sources */,
+				497FC5A4282D7FE200375922 /* ProfileManager.swift in Sources */,
 				49FE1546282154DA00B70190 /* AccountSummaryCell.swift in Sources */,
 				494C6F362817FA260023FF5F /* LoginView.swift in Sources */,
 				49EDB9872826CFD500724952 /* NSNotififcationName.swift in Sources */,
@@ -378,6 +393,7 @@
 				49FE155B2822FA7D00B70190 /* CurrencyFormatterTest.swift in Sources */,
 				49849054282C1AC200F06857 /* ProfileTest.swift in Sources */,
 				49849056282C1C7400F06857 /* AcccountTests.swift in Sources */,
+				497FC5A6282D82B500375922 /* AccountSummaryViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
