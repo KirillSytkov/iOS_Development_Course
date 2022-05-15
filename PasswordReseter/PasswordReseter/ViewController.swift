@@ -11,8 +11,10 @@ class ViewController: UIViewController {
     
     let stackView = UIStackView()
     let newPasswordTextFiled = PasswordTextField(placeHolder: "New password")
-    let criteriaView = PasswordCriteriaView(text: "uppercase letter (A-Z)")
-
+    let statusView = PasswordStatusView()
+    let confirmPasswordtextField = PasswordTextField(placeHolder: "Re-enter new password")
+    let resetButton = UIButton(type: .system)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         style()
@@ -28,23 +30,33 @@ extension ViewController {
         stackView.spacing = 20
         
         newPasswordTextFiled.translatesAutoresizingMaskIntoConstraints = false
-        criteriaView.translatesAutoresizingMaskIntoConstraints = false
+        statusView.translatesAutoresizingMaskIntoConstraints = false
+        confirmPasswordtextField.translatesAutoresizingMaskIntoConstraints = false
+        
+        resetButton.translatesAutoresizingMaskIntoConstraints = false
+        resetButton.setAttributedTitle(NSAttributedString(string: "Reset password", attributes: [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .title3)]), for: .normal)
+        resetButton.backgroundColor = .systemBlue
+        resetButton.tintColor = .white
+        resetButton.layer.cornerRadius = 5
+//        resetButton.addTarget(self, action: #selector(resetPasswordButtonPressed), for: .primaryActionTriggered)
+        
+
     }
     
     private func layout() {
         stackView.addArrangedSubview(newPasswordTextFiled)
-        stackView.addArrangedSubview(criteriaView)
+        stackView.addArrangedSubview(statusView)
+        stackView.addArrangedSubview(confirmPasswordtextField)
+        stackView.addArrangedSubview(resetButton)
         view.addSubview(stackView)
  
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
             stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             stackView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 2),
             view.trailingAnchor.constraint(equalToSystemSpacingAfter: stackView.trailingAnchor, multiplier: 2),
             
-//            newPasswordTextFiled.leadingAnchor.constraint(equalToSystemSpacingAfter: stackView.leadingAnchor, multiplier: 1),
-//            stackView.trailingAnchor.constraint(equalToSystemSpacingAfter: newPasswordTextFiled.trailingAnchor, multiplier: 1),
-//            newPasswordTextFiled.centerYAnchor.constraint(equalTo: stackView.centerYAnchor),
+            resetButton.heightAnchor.constraint(equalToConstant: 50)
+
         ])
     }
 }
