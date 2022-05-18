@@ -30,6 +30,8 @@ extension ViewController {
         stackView.spacing = 20
         
         newPasswordTextFiled.translatesAutoresizingMaskIntoConstraints = false
+        newPasswordTextFiled.delegate = self
+        
         statusView.translatesAutoresizingMaskIntoConstraints = false
         confirmPasswordtextField.translatesAutoresizingMaskIntoConstraints = false
         
@@ -59,4 +61,14 @@ extension ViewController {
 
         ])
     }
+}
+
+extension ViewController: PasswordTextFieldDelegate {
+    func editingChanged(_ sender: PasswordTextField) {
+        if sender == newPasswordTextFiled {
+            statusView.upadateDisplay(sender.textFiled.text ?? "")
+        }
+    }
+    
+    
 }

@@ -18,6 +18,8 @@ class PasswordStatusView: UIView {
     let digitCriteriaView = PasswordCriteriaView(text: "digit (0-9)")
     let specialCharacterCriteriaView = PasswordCriteriaView(text: "special character (e.g. !@#$%^")
     
+    private var shouldResetCriteria: Bool = true
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -73,7 +75,7 @@ extension PasswordStatusView {
             stackView.leadingAnchor.constraint(equalToSystemSpacingAfter: leadingAnchor, multiplier: 2),
             trailingAnchor.constraint(equalToSystemSpacingAfter: stackView.trailingAnchor, multiplier: 2),
             bottomAnchor.constraint(equalToSystemSpacingBelow: stackView.bottomAnchor, multiplier:  2)
-        
+            
         ])
     }
     
@@ -92,6 +94,40 @@ extension PasswordStatusView {
         attrText.append(NSAttributedString(string: "criteria when setting your password:", attributes: plainTextAttributes))
         
         return attrText
+    }
+}
+
+extension PasswordStatusView {
+    func upadateDisplay(_ text: String) {
+        let lengthAndNoSpaceMet = PasswrodCriteria.lengthAndNoSpaceMet(text)
+        let uppercaseMet = PasswrodCriteria.uppercaseMet(text)
+        let lowercaseMet = PasswrodCriteria.lowercaseMet(text)
+        let digitMet = PasswrodCriteria.digitMet(text)
+        let specialCharacterMet = PasswrodCriteria.specialCharacterMet(text)
+        
+        if shouldResetCriteria {
+            lengthAndNoSpaceMet
+            ? lengthCriteriaView.isCriteriaMet = true
+            : lengthCriteriaView.reset()
+            
+            uppercaseMet
+            ? uppercaseCriteriaView.isCriteriaMet = true
+            : uppercaseCriteriaView.reset()
+            
+            lowercaseMet
+            ? lowercaseCriteriaView.isCriteriaMet = true
+            : lowercaseCriteriaView.reset()
+            
+            digitMet
+            ? digitCriteriaView.isCriteriaMet = true
+            : digitCriteriaView.reset()
+            
+            specialCharacterMet
+            ? specialCharacterCriteriaView.isCriteriaMet = true
+            : specialCharacterCriteriaView.reset()
+        }
+        
+        
     }
 }
 
