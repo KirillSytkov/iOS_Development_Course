@@ -27,6 +27,7 @@ class PasswordCriteriaView: UIView {
             }
         }
     }
+    
     init(text: String) {
         super.init(frame: .zero)
         label.text = text
