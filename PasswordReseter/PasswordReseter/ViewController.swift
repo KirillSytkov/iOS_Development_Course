@@ -22,7 +22,7 @@ class ViewController: UIViewController {
         layout()
         setup()
     }
-
+    
 }
 
 extension ViewController {
@@ -41,8 +41,7 @@ extension ViewController {
         resetButton.backgroundColor = .systemBlue
         resetButton.tintColor = .white
         resetButton.layer.cornerRadius = 5
-//        resetButton.addTarget(self, action: #selector(resetPasswordButtonPressed), for: .primaryActionTriggered)
-        
+        resetButton.addTarget(self, action: #selector(resetPasswordButtonTapped), for: .primaryActionTriggered)
     }
     
     private func layout() {
@@ -51,14 +50,14 @@ extension ViewController {
         stackView.addArrangedSubview(confirmPasswordTextField)
         stackView.addArrangedSubview(resetButton)
         view.addSubview(stackView)
- 
+        
         NSLayoutConstraint.activate([
             stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             stackView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 2),
             view.trailingAnchor.constraint(equalToSystemSpacingAfter: stackView.trailingAnchor, multiplier: 2),
             
             resetButton.heightAnchor.constraint(equalToConstant: 50)
-
+            
         ])
     }
     
@@ -66,6 +65,12 @@ extension ViewController {
         setupNewPassword()
         setupConfirmPassword()
         setupDismissKeyboardGesture()
+        setupKeyboardHiding()
+    }
+    
+    private func setupKeyboardHiding() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     private func setupNewPassword() {
@@ -120,7 +125,7 @@ extension ViewController {
         view.endEditing(true)
     }
     
-
+    
 }
 
 extension ViewController: PasswordTextFieldDelegate {
@@ -139,4 +144,50 @@ extension ViewController: PasswordTextFieldDelegate {
         }
     }
     
+}
+
+extension ViewController {
+    @IBAction func keyboardWillShow(sender: NSNotification) {
+        
+        guard let userInfo = sender.userInfo,
+              let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue,
+              let currentTextField = UIResponder.currentFirst() as? UITextField else { return }
+        
+        let keyboardTopY = keyboardFrame.cgRectValue.origin.y
+        let convertedTextFieldFrame = view.convert(currentTextField.frame, from: currentTextField.superview)
+        let textFieldBottomY = convertedTextFieldFrame.origin.y + convertedTextFieldFrame.size.height
+        
+        
+        if textFieldBottomY > keyboardTopY {
+            let textBoxY = convertedTextFieldFrame.origin.y
+            let newFrameY = (textBoxY - keyboardTopY / 2) * -1
+            view.frame.origin.y = newFrameY
+        }
+    }
+    
+    @IBAction func keyboardWillHide(sender: NSNotification) {
+        view.frame.origin.y = 0
+    }
+}
+//MARK: - Action
+extension ViewController {
+    @IBAction func resetPasswordButtonTapped(_ sender: UIButton) {
+        view.endEditing(true)
+        
+        let isValidNewPassword = newPasswordTextFiled.validate()
+        let isValidConfirmPassword = confirmPasswordTextField.validate()
+        
+        if isValidNewPassword && isValidConfirmPassword {
+            showAlert(title: "Success", message: "You have successfully changed your password.")
+        }
+    }
+    
+    private func showAlert(title: String, message: String) {
+        let alert =  UIAlertController(title: "", message: "", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        
+        alert.title = title
+        alert.message = message
+        present(alert, animated: true, completion: nil)
+    }
 }
