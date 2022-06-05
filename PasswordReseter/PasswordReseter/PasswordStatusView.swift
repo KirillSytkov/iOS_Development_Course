@@ -98,7 +98,7 @@ extension PasswordStatusView {
 }
 
 extension PasswordStatusView {
-    func upadateDisplay(_ text: String) {
+    func updateDisplay(_ text: String) {
         let lengthAndNoSpaceMet = PasswordCriteria.lengthAndNoSpaceMet(text)
         let uppercaseMet = PasswordCriteria.uppercaseMet(text)
         let lowercaseMet = PasswordCriteria.lowercaseMet(text)
@@ -162,4 +162,5 @@ extension PasswordStatusView {
         specialCharacterCriteriaView.reset()
     }
 }
+
 

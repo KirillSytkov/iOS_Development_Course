@@ -89,7 +89,7 @@ extension ViewController {
             }
             
             //Criteria met
-            self.statusView.upadateDisplay(text)
+            self.statusView.updateDisplay(text)
             if !self.statusView.validate(text) {
                 return (false,"Your password must meet the requirements below")
             }
@@ -131,7 +131,7 @@ extension ViewController {
 extension ViewController: PasswordTextFieldDelegate {
     func editingChanged(_ sender: PasswordTextField) {
         if sender == newPasswordTextFiled {
-            statusView.upadateDisplay(sender.textFiled.text ?? "")
+            statusView.updateDisplay(sender.textFiled.text ?? "")
         }
     }
     

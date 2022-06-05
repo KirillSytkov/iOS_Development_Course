@@ -87,3 +87,17 @@ extension PasswordCriteriaView {
     }
 }
 
+// MARK: Tests
+extension PasswordCriteriaView {
+    var isCheckMarkImage: Bool {
+        return imageView.image == checkmarkImage
+    }
+
+    var isXmarkImage: Bool {
+        return imageView.image == xmarkImage
+    }
+
+    var isResetImage: Bool {
+        return imageView.image == circleImage
+    }
+}
