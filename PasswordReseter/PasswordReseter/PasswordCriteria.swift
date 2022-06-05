@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PasswrodCriteria {
+struct PasswordCriteria {
     static func lenghtCriteriaMet(_ text: String) -> Bool {
         text.count >= 8 && text.count <= 32
     }

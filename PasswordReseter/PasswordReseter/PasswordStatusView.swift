@@ -99,11 +99,11 @@ extension PasswordStatusView {
 
 extension PasswordStatusView {
     func upadateDisplay(_ text: String) {
-        let lengthAndNoSpaceMet = PasswrodCriteria.lengthAndNoSpaceMet(text)
-        let uppercaseMet = PasswrodCriteria.uppercaseMet(text)
-        let lowercaseMet = PasswrodCriteria.lowercaseMet(text)
-        let digitMet = PasswrodCriteria.digitMet(text)
-        let specialCharacterMet = PasswrodCriteria.specialCharacterMet(text)
+        let lengthAndNoSpaceMet = PasswordCriteria.lengthAndNoSpaceMet(text)
+        let uppercaseMet = PasswordCriteria.uppercaseMet(text)
+        let lowercaseMet = PasswordCriteria.lowercaseMet(text)
+        let digitMet = PasswordCriteria.digitMet(text)
+        let specialCharacterMet = PasswordCriteria.specialCharacterMet(text)
         
         if shouldResetCriteria {
             lengthAndNoSpaceMet
@@ -138,14 +138,14 @@ extension PasswordStatusView {
     }
     
     func validate(_ text: String) -> Bool {
-        let uppercaseMet = PasswrodCriteria.uppercaseMet(text)
-        let lowercaseMet = PasswrodCriteria.lowercaseMet(text)
-        let digitMet = PasswrodCriteria.digitMet(text)
-        let specialCharacterMet = PasswrodCriteria.specialCharacterMet(text)
+        let uppercaseMet = PasswordCriteria.uppercaseMet(text)
+        let lowercaseMet = PasswordCriteria.lowercaseMet(text)
+        let digitMet = PasswordCriteria.digitMet(text)
+        let specialCharacterMet = PasswordCriteria.specialCharacterMet(text)
         
         let checkable = [uppercaseMet,lowercaseMet,digitMet,specialCharacterMet]
         let metCriteria = checkable.filter { $0 }
-        let lengthAndNoSpaceMet = PasswrodCriteria.lengthAndNoSpaceMet(text)
+        let lengthAndNoSpaceMet = PasswordCriteria.lengthAndNoSpaceMet(text)
         
         if lengthAndNoSpaceMet && metCriteria.count >= 3 {
             return true

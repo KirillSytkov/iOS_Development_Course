@@ -14,9 +14,21 @@
 		4916F54C282FC1B600D6D781 /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916F54B282FC1B600D6D781 /* PasswordTextField.swift */; };
 		496DBCFB283E89AE00B2F29F /* UIResponder+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496DBCFA283E89AE00B2F29F /* UIResponder+extension.swift */; };
 		499DEB502832AEE200CEAD9C /* PasswordCriteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499DEB4F2832AEE200CEAD9C /* PasswordCriteria.swift */; };
+		49A45CB9284D1ADD00CFCEC7 /* PasswordCriteriaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A45CB8284D1ADD00CFCEC7 /* PasswordCriteriaTests.swift */; };
+		49A45CBB284D1F2F00CFCEC7 /* PasswordStatusViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A45CBA284D1F2F00CFCEC7 /* PasswordStatusViewTests.swift */; };
 		49DC7D1D28312CCD0058BFAA /* PasswordCriteriaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DC7D1C28312CCD0058BFAA /* PasswordCriteriaView.swift */; };
 		49DC7D21283135530058BFAA /* PasswordStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DC7D20283135530058BFAA /* PasswordStatusView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		49A45CB3284D1ABE00CFCEC7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4916F52A282ECAAC00D6D781 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4916F531282ECAAC00D6D781;
+			remoteInfo = PasswordReseter;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		4916F532282ECAAC00D6D781 /* PasswordReseter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PasswordReseter.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -28,12 +40,22 @@
 		4916F54B282FC1B600D6D781 /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
 		496DBCFA283E89AE00B2F29F /* UIResponder+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIResponder+extension.swift"; sourceTree = "<group>"; };
 		499DEB4F2832AEE200CEAD9C /* PasswordCriteria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordCriteria.swift; sourceTree = "<group>"; };
+		49A45CAF284D1ABE00CFCEC7 /* PasswordReseterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PasswordReseterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		49A45CB8284D1ADD00CFCEC7 /* PasswordCriteriaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordCriteriaTests.swift; sourceTree = "<group>"; };
+		49A45CBA284D1F2F00CFCEC7 /* PasswordStatusViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordStatusViewTests.swift; sourceTree = "<group>"; };
 		49DC7D1C28312CCD0058BFAA /* PasswordCriteriaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordCriteriaView.swift; sourceTree = "<group>"; };
 		49DC7D20283135530058BFAA /* PasswordStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordStatusView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		4916F52F282ECAAC00D6D781 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49A45CAC284D1ABE00CFCEC7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -47,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				4916F534282ECAAC00D6D781 /* PasswordReseter */,
+				49A45CB0284D1ABE00CFCEC7 /* PasswordReseterTests */,
 				4916F533282ECAAC00D6D781 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -55,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				4916F532282ECAAC00D6D781 /* PasswordReseter.app */,
+				49A45CAF284D1ABE00CFCEC7 /* PasswordReseterTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -90,6 +114,15 @@
 			name = Utils;
 			sourceTree = "<group>";
 		};
+		49A45CB0284D1ABE00CFCEC7 /* PasswordReseterTests */ = {
+			isa = PBXGroup;
+			children = (
+				49A45CB8284D1ADD00CFCEC7 /* PasswordCriteriaTests.swift */,
+				49A45CBA284D1F2F00CFCEC7 /* PasswordStatusViewTests.swift */,
+			);
+			path = PasswordReseterTests;
+			sourceTree = "<group>";
+		};
 		49DC7D1B28312CB50058BFAA /* PaswordStatusView */ = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +153,24 @@
 			productReference = 4916F532282ECAAC00D6D781 /* PasswordReseter.app */;
 			productType = "com.apple.product-type.application";
 		};
+		49A45CAE284D1ABE00CFCEC7 /* PasswordReseterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49A45CB7284D1ABE00CFCEC7 /* Build configuration list for PBXNativeTarget "PasswordReseterTests" */;
+			buildPhases = (
+				49A45CAB284D1ABE00CFCEC7 /* Sources */,
+				49A45CAC284D1ABE00CFCEC7 /* Frameworks */,
+				49A45CAD284D1ABE00CFCEC7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				49A45CB4284D1ABE00CFCEC7 /* PBXTargetDependency */,
+			);
+			name = PasswordReseterTests;
+			productName = PasswordReseterTests;
+			productReference = 49A45CAF284D1ABE00CFCEC7 /* PasswordReseterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -132,6 +183,11 @@
 				TargetAttributes = {
 					4916F531282ECAAC00D6D781 = {
 						CreatedOnToolsVersion = 13.2.1;
+					};
+					49A45CAE284D1ABE00CFCEC7 = {
+						CreatedOnToolsVersion = 13.2.1;
+						LastSwiftMigration = 1320;
+						TestTargetID = 4916F531282ECAAC00D6D781;
 					};
 				};
 			};
@@ -149,6 +205,7 @@
 			projectRoot = "";
 			targets = (
 				4916F531282ECAAC00D6D781 /* PasswordReseter */,
+				49A45CAE284D1ABE00CFCEC7 /* PasswordReseterTests */,
 			);
 		};
 /* End PBXProject section */
@@ -160,6 +217,13 @@
 			files = (
 				4916F542282ECAAC00D6D781 /* LaunchScreen.storyboard in Resources */,
 				4916F53F282ECAAC00D6D781 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49A45CAD284D1ABE00CFCEC7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,7 +244,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		49A45CAB284D1ABE00CFCEC7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49A45CB9284D1ADD00CFCEC7 /* PasswordCriteriaTests.swift in Sources */,
+				49A45CBB284D1F2F00CFCEC7 /* PasswordStatusViewTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		49A45CB4284D1ABE00CFCEC7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4916F531282ECAAC00D6D781 /* PasswordReseter */;
+			targetProxy = 49A45CB3284D1ABE00CFCEC7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		4916F540282ECAAC00D6D781 /* LaunchScreen.storyboard */ = {
@@ -368,6 +449,55 @@
 			};
 			name = Release;
 		};
+		49A45CB5284D1ABE00CFCEC7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D3CL5249J7;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.KirillSytkov.Tms.PasswordReseterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PasswordReseter.app/PasswordReseter";
+			};
+			name = Debug;
+		};
+		49A45CB6284D1ABE00CFCEC7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D3CL5249J7;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.KirillSytkov.Tms.PasswordReseterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PasswordReseter.app/PasswordReseter";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -385,6 +515,15 @@
 			buildConfigurations = (
 				4916F547282ECAAC00D6D781 /* Debug */,
 				4916F548282ECAAC00D6D781 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		49A45CB7284D1ABE00CFCEC7 /* Build configuration list for PBXNativeTarget "PasswordReseterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49A45CB5284D1ABE00CFCEC7 /* Debug */,
+				49A45CB6284D1ABE00CFCEC7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
