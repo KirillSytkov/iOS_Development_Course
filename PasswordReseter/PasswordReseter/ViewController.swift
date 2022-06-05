@@ -11,10 +11,12 @@ class ViewController: UIViewController {
     typealias CustomValidation = PasswordTextField.CustomValidation
     
     let stackView = UIStackView()
-    let newPasswordTextFiled = PasswordTextField(placeHolder: "New password")
+    let newPasswordTextField = PasswordTextField(placeHolder: "New password")
     let statusView = PasswordStatusView()
     let confirmPasswordTextField = PasswordTextField(placeHolder: "Re-enter new password")
     let resetButton = UIButton(type: .system)
+    
+    var alert: UIAlertController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +33,7 @@ extension ViewController {
         stackView.axis = .vertical
         stackView.spacing = 20
         
-        newPasswordTextFiled.translatesAutoresizingMaskIntoConstraints = false
+        newPasswordTextField.translatesAutoresizingMaskIntoConstraints = false
         
         statusView.translatesAutoresizingMaskIntoConstraints = false
         confirmPasswordTextField.translatesAutoresizingMaskIntoConstraints = false
@@ -45,7 +47,7 @@ extension ViewController {
     }
     
     private func layout() {
-        stackView.addArrangedSubview(newPasswordTextFiled)
+        stackView.addArrangedSubview(newPasswordTextField)
         stackView.addArrangedSubview(statusView)
         stackView.addArrangedSubview(confirmPasswordTextField)
         stackView.addArrangedSubview(resetButton)
@@ -77,7 +79,7 @@ extension ViewController {
         let newPasswordValidation: CustomValidation = { text in
             guard let text = text, !text.isEmpty else {
                 self.statusView.reset()
-                return (false, "Enter yuor password")
+                return (false, "Enter your password")
             }
             
             //Valid characters
@@ -96,17 +98,17 @@ extension ViewController {
             
             return (true,"")
         }
-        newPasswordTextFiled.customValidation = newPasswordValidation
-        newPasswordTextFiled.delegate = self
+        newPasswordTextField.customValidation = newPasswordValidation
+        newPasswordTextField.delegate = self
     }
     
     private func setupConfirmPassword() {
         let confirmPasswordValidation: CustomValidation = { text in
             guard let text = text, !text.isEmpty else {
-                return (false, "Enter your password.")
+                return (false, "Enter your password")
             }
-            guard text == self.newPasswordTextFiled.text else {
-                return (false, "Password do not match.")
+            guard text == self.newPasswordTextField.text else {
+                return (false, "Password do not match")
             }
             
             return (true, "")
@@ -130,15 +132,15 @@ extension ViewController {
 
 extension ViewController: PasswordTextFieldDelegate {
     func editingChanged(_ sender: PasswordTextField) {
-        if sender == newPasswordTextFiled {
+        if sender == newPasswordTextField {
             statusView.updateDisplay(sender.textFiled.text ?? "")
         }
     }
     
     func editingDidEnd(_ sender: PasswordTextField) {
-        if sender === newPasswordTextFiled {
+        if sender === newPasswordTextField {
             statusView.shouldResetCriteria = false
-            _ = newPasswordTextFiled.validate()
+            _ = newPasswordTextField.validate()
         } else if sender == confirmPasswordTextField {
             _ = confirmPasswordTextField.validate()
         }
@@ -174,7 +176,7 @@ extension ViewController {
     @IBAction func resetPasswordButtonTapped(_ sender: UIButton) {
         view.endEditing(true)
         
-        let isValidNewPassword = newPasswordTextFiled.validate()
+        let isValidNewPassword = newPasswordTextField.validate()
         let isValidConfirmPassword = confirmPasswordTextField.validate()
         
         if isValidNewPassword && isValidConfirmPassword {
@@ -183,11 +185,25 @@ extension ViewController {
     }
     
     private func showAlert(title: String, message: String) {
-        let alert =  UIAlertController(title: "", message: "", preferredStyle: .alert)
+        alert =  UIAlertController(title: "", message: "", preferredStyle: .alert)
+        guard let alert = alert else { return }
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         
         alert.title = title
         alert.message = message
         present(alert, animated: true, completion: nil)
+    }
+}
+
+// MARK: Tests
+extension ViewController {
+    var newPasswordText: String? {
+        get { return newPasswordTextField.text }
+        set { newPasswordTextField.text = newValue}
+    }
+    
+    var confirmPasswordText: String? {
+        get { return confirmPasswordTextField.text }
+        set { confirmPasswordTextField.text = newValue}
     }
 }
